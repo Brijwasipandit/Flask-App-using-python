@@ -1,0 +1,17 @@
+
+# base image
+FROM openjdk:17-jdk-alpine
+
+# Set the working directory
+WORKDIR /app
+
+# Copy code to container
+COPY src/Main.java /app/Main.java
+
+# Compile the code
+RUN javac Main.java
+
+# Run the code (specify the classpath to the current directory)
+CMD ["java","Main"]
+
+

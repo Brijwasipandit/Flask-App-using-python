@@ -1,0 +1,24 @@
+#Base Image
+
+FROM python:3.11-alpine
+
+#WorkingDir
+
+WORKDIR /app
+
+#Copy CODE
+
+COPY . /app
+
+#Required libary
+
+RUN pip install -r requirements.txt
+
+#Expose 5000
+EXPOSE 5000
+
+#Command to run the Code
+
+CMD ["flask", "run", "--host=0.0.0.0"]
+
+
